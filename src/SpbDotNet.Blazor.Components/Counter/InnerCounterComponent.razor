@@ -1,0 +1,23 @@
+<tr>
+    <td>
+        inner count = @InnerCount
+    </td>
+
+    <td>
+        <button @onclick="Increment" style="width: 100%">
+            increment inner
+        </button>
+    </td>
+</tr>
+
+@code {
+
+    [Parameter]
+    public int InnerCount { get; set; }
+
+    private void Increment()
+    {
+        InnerCount++;
+    }
+
+}

@@ -1,0 +1,38 @@
+@using SpbDotNet.Blazor.Components.Models
+
+<div>
+    <select @bind="_option">
+        <option>none</option>
+        <option>id</option>
+        <option>name</option>
+    </select>
+
+    @switch (_option)
+    {
+        case "id":
+            <GenericValueComponent Value="_user.Id"/>
+            break;
+
+        case "name":
+            <GenericValueComponent Value="_user.Name"/>
+            break;
+
+        default:
+            <div>null</div>
+            break;
+    }
+    
+    @@username:
+    
+    @_user.Name
+    
+    @("<span>Hello World</span>") = &lt;span&gt;Hello World&lt;/span&gt;
+    
+</div>
+
+@code {
+
+    private readonly User _user = new User(1, "ronimizy");
+
+    private string? _option;
+}

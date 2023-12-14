@@ -1,0 +1,21 @@
+@if (IsAuthorized)
+{
+    @AuthorizedContent
+}
+else
+{
+    @NotAuthorizedContent
+}
+
+@code {
+
+    [Parameter]
+    public bool IsAuthorized { get; set; }
+
+    [Parameter]
+    public RenderFragment? AuthorizedContent { get; set; }
+
+    [Parameter]
+    public RenderFragment? NotAuthorizedContent { get; set; }
+
+}

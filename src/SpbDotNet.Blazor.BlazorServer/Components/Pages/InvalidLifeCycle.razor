@@ -1,0 +1,25 @@
+@page "/lifecycle/invalid"
+@rendermode InteractiveServer
+
+<PageTitle>Invalid lifecycle</PageTitle>
+
+<h1>Invalid lifecycle</h1>
+
+
+<p>
+    This component uses OnInitialized method to update string with counter value.<br/>
+    As this method is invoked only one time after component object creation, <br/>
+    value would not be updated on increment
+</p>
+
+<button @onclick="@(() => _count++)">
+    increment
+</button>
+
+<InvalidLifeCycleComponent Count="_count"/>
+
+@code {
+
+    private int _count;
+
+}

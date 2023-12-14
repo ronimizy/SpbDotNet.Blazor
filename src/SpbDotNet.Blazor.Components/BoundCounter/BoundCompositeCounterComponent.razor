@@ -1,0 +1,29 @@
+<table>
+
+    <tr>
+        <td style="padding-right: 5px">
+            parent count = @ParentCount
+        </td>
+
+        <td>
+            <button @onclick="@Increment">
+                increment parent
+            </button>
+        </td>
+    </tr>
+
+    <BoundInnerCounterComponent @bind-InnerCount="ParentCount"/>
+
+</table>
+
+@code {
+
+    [Parameter]
+    public int ParentCount { get; set; }
+
+    private void Increment()
+    {
+        ParentCount++;
+    }
+
+}

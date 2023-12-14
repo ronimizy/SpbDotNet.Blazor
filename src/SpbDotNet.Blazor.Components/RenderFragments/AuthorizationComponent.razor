@@ -1,0 +1,26 @@
+<div>
+    <button @onclick="ToggleAuthorized">
+        toggle authorized
+    </button>
+</div>
+
+<div>
+    <AuthorizationDisplayComponent IsAuthorized="_isAuthorized">
+        <AuthorizedContent>
+            You are authorized!
+        </AuthorizedContent>
+        <NotAuthorizedContent>
+            You are not authorized :(
+        </NotAuthorizedContent>
+    </AuthorizationDisplayComponent>
+</div>
+
+@code {
+    private bool _isAuthorized;
+
+    private void ToggleAuthorized()
+    {
+        _isAuthorized = !_isAuthorized;
+    }
+
+}

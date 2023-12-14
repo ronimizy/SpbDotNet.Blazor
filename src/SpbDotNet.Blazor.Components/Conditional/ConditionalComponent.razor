@@ -1,0 +1,16 @@
+<button @onclick="Toggle">
+    toggle authentication state
+</button>
+
+<ConditionalAuthenticationComponent IsAuthenticated="_isAuthenticated"/>
+
+@code {
+
+    private bool _isAuthenticated;
+
+    private void Toggle()
+    {
+        _isAuthenticated = !_isAuthenticated;
+    }
+
+}

@@ -1,0 +1,19 @@
+<button @onclick="AddValue">
+    add value
+</button>
+
+@for (var i = 0; i < _count; i++)
+{
+    <li>@i</li>
+}
+
+@code {
+
+    private int _count;
+
+    private void AddValue()
+    {
+        _count++;
+    }
+
+}

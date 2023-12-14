@@ -1,0 +1,28 @@
+<tr>
+    <td>
+        inner count = @InnerCount
+    </td>
+
+    <td>
+        <button @onclick="Increment" style="width: 100%">
+            increment inner
+        </button>
+    </td>
+
+</tr>
+
+@code {
+
+    [Parameter]
+    public int InnerCount { get; set; }
+
+    [Parameter]
+    public EventCallback<int> InnerCountChanged { get; set; }
+
+    private Task Increment()
+    {
+        InnerCount++;
+        return InnerCountChanged.InvokeAsync(InnerCount);
+    }
+
+}

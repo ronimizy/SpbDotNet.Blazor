@@ -1,0 +1,20 @@
+@try
+{
+    if (Throw)
+    {
+        throw new Exception("Exception has been thrown");
+    }
+
+    @:No exception has been thrown
+}
+catch (Exception e)
+{
+    @e.Message
+}
+
+@code {
+
+    [Parameter]
+    public bool Throw { get; set; }
+
+}

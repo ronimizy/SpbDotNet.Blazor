@@ -1,0 +1,21 @@
+@using Microsoft.JSInterop
+@inject IJSRuntime Js
+
+<button @onclick="@(() => _count++)">
+    increment
+</button>
+
+<div id="broken-counter" >
+    Count = @_count
+</div>
+
+@code {
+
+    private int _count;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await Js.InvokeVoidAsync("remove_element", "broken-counter");
+    }
+
+}

@@ -1,0 +1,10 @@
+@using SpbDotNet.Blazor.Components.Services
+@inject UserState State
+
+<button @onclick="@(() => State.Count++)">
+    increment
+</button>
+
+<div>
+    Count = @State.Count
+</div>

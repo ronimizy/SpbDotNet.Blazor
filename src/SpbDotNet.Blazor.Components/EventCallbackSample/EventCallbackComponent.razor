@@ -1,0 +1,24 @@
+<button @onclick="HandleButtonClicked">
+    A
+</button>
+
+<button @onclick="OnButtonBClicked">
+    B
+</button>
+
+@code {
+
+    private int _count;
+    
+    [Parameter]
+    public EventCallback<int> OnButtonAClicked { get; set; }
+    
+    public EventCallback OnButtonBClicked { get; set; }
+
+    private async Task HandleButtonClicked()
+    {
+        _count++;
+        await OnButtonAClicked.InvokeAsync(_count);
+    }
+
+}

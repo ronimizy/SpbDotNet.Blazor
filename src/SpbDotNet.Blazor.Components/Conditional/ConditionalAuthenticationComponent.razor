@@ -1,0 +1,26 @@
+@using Microsoft.JSInterop
+@inject IJSRuntime Js
+
+@if (IsAuthenticated)
+{
+    <button @onclick="@(() => AlertAsync("you have been logged out"))">
+        logout
+    </button>
+}
+else
+{
+    <button @onclick="@(() => AlertAsync("you have been logged in"))">
+        login
+    </button>
+}
+
+@code {
+
+    [Parameter]
+    public bool IsAuthenticated { get; set; }
+    
+    private async Task AlertAsync(string text)
+    {
+        await Js.InvokeVoidAsync("alert", text);
+    }
+}

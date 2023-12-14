@@ -1,0 +1,16 @@
+<button @onclick="ToggleTrow">
+    toggle throw
+</button>
+
+<TryCatchMessageComponent Throw="_throw"/>
+
+@code {
+
+    private bool _throw;
+
+    private void ToggleTrow()
+    {
+        _throw = !_throw;
+    }
+
+}

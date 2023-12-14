@@ -1,0 +1,15 @@
+@page "/bound-counter"
+@rendermode InteractiveServer
+
+<PageTitle>Bound Counter</PageTitle>
+
+<h1>BoundCounter</h1>
+
+<p>
+    This counter consists of two components.<br/>
+    One is parent, other is inner.<br/>
+    Each of them can increment the value, and inner increments are propagating to parent, as there is a
+    two-way binding via @@bind-Count
+</p>
+
+<BoundCompositeCounterComponent/>

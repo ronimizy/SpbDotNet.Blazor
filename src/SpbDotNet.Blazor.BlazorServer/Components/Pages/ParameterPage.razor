@@ -1,0 +1,29 @@
+@page "/parameter/{value:int}"
+@rendermode InteractiveServer
+@inject NavigationManager NavigationManager
+
+<PageTitle>Parameter Page</PageTitle>
+
+<h1>Parameter Page</h1>
+
+<div>
+    Value = @Value
+</div>
+
+<div>
+    <button @onclick="MoveNext">
+        next
+    </button>
+</div>
+
+@code {
+
+    [Parameter]
+    public int Value { get; set; }
+
+    private void MoveNext()
+    {
+        NavigationManager.NavigateTo($"/parameter/{Value + 1}");
+    }
+
+}

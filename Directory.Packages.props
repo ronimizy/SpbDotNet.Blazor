@@ -1,0 +1,10 @@
+<Project>
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <EnablePackageVersionOverride>false</EnablePackageVersionOverride>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageVersion Include="Phazor.Components" Version="1.1.37"/>
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0"/>
+    </ItemGroup>
+</Project>

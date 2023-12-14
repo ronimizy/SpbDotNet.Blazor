@@ -1,0 +1,19 @@
+<div>
+    Username: <PhazorReactiveText Value="Username"/>
+</div>
+
+<div>
+    <PhazorReactiveForEach Elements="Friends" Context="friendName">
+        <li>@friendName</li>
+    </PhazorReactiveForEach>
+</div>
+
+@code {
+
+    [Parameter]
+    public IObservable<string>? Username { get; set; }
+
+    [Parameter]
+    public IObservable<IEnumerable<string>>? Friends { get; set; }
+
+}

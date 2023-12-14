@@ -1,0 +1,15 @@
+@_formattedString
+
+@code {
+    
+    private string _formattedString = string.Empty;
+    
+    [Parameter]
+    public int Count { get; set; }
+
+    protected override void OnInitialized()
+    {
+        _formattedString = $"Count = {Count}";
+    }
+
+}

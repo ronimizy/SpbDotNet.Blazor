@@ -1,0 +1,25 @@
+@page "/lifecycle/correct"
+@rendermode InteractiveServer
+
+<PageTitle>Correct lifecycle</PageTitle>
+
+<h1>Correct lifecycle</h1>
+
+
+<p>
+    This component uses OnParametersSet method to update string with counter value.<br/>
+    As this method is invoked every time when parameters being set, <br/>
+    value is updated on increment
+</p>
+
+<button @onclick="@(() => _count++)">
+    increment
+</button>
+
+<CorrectLifeCycleComponent Count="_count"/>
+
+@code {
+
+    private int _count;
+
+}
